@@ -48,6 +48,11 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra:
   generator: false  
@@ -58,6 +63,7 @@ nav:
   - Inicio: index.md  
   - Contenido:    
       - content/p1.md    
+      - content/p2.md    
       
 
   # - Proyecto Integrador: 
@@ -65,7 +71,7 @@ nav:
 
 plugins:
   - search
-  - blog
+  # - blog
   - glightbox
 
 

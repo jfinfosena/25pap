@@ -1,141 +1,175 @@
-# **Estructura del Curso: Bases de Datos Relacionales (60 horas totales)**
+# Curso de FastAPI: Estructura de 16 Clases
 
-#### **Clase 1: Introducción a las Bases de Datos**
-- **Objetivo**: Comprender qué son las bases de datos y su importancia.
+Este curso de **FastAPI** de 16 clases está diseñado para enseñar desde los fundamentos hasta temas avanzados, con un enfoque práctico centrado en el desarrollo de una API de gestión de proyectos. Cada clase combina teoría, práctica y trabajo en un proyecto continuo, asumiendo un nivel inicial-intermedio en Python. Duración aproximada por clase: 1.5-2 horas.
+
+---
+
+## Módulo 1: Fundamentos y Primeros Pasos
+
+### Clase 1: Introducción a FastAPI y APIs REST
+- **Objetivo**: Comprender FastAPI y configurar el entorno.
 - **Contenido**:
-  - Definición y tipos de bases de datos (relacionales, no relacionales).
-  - Historia y evolución de los SGBD (Sistemas Gestores de Bases de Datos).
-  - Introducción a los conceptos: tablas, filas, columnas, claves.
-  - Herramientas: MySQL, PostgreSQL, SQLite (instalación y configuración).
-- **Práctica**:
-  - Instalar un SGBD (MySQL/PostgreSQL).
-  - Crear una base de datos simple y explorar la interfaz.
-- **Evaluación**: Quiz sobre conceptos básicos y discusión sobre casos de uso.
-- **Duración**: Teoría (2.5h), Práctica (2.5h), Evaluación (1h).
+  - ¿Qué es FastAPI? Ventajas y comparación con otros frameworks.
+  - Conceptos de APIs REST: métodos HTTP, endpoints, JSON.
+  - Instalación de FastAPI, Uvicorn y Python.
+- **Práctica**: Crear una API con un endpoint `/projects` que devuelva una lista de proyectos.
+- **Tarea**: Configurar el entorno local y probar la API.
 
-#### **Clase 2: Fundamentos del Modelo Relacional**
-- **Objetivo**: Entender los principios del modelo relacional.
+### Clase 2: Rutas y Parámetros
+- **Objetivo**: Crear endpoints dinámicos con parámetros.
 - **Contenido**:
-  - Reglas de Codd para bases de datos relacionales.
-  - Entidades, atributos y relaciones.
-  - Claves primarias, foráneas y su rol.
-  - Normalización: conceptos básicos (1NF, 2NF, 3NF).
-- **Práctica**:
-  - Diseñar un esquema relacional simple (ejemplo: sistema de biblioteca).
-  - Identificar claves primarias y foráneas en diagramas.
-- **Evaluación**: Ejercicio de modelado básico y revisión grupal.
-- **Duración**: Teoría (2.5h), Práctica (2.5h), Evaluación (1h).
+  - Endpoints con GET, POST, PUT, DELETE.
+  - Parámetros de ruta (`/projects/{id}`) y query parameters (`/projects?status=active`).
+  - Validación básica de datos.
+- **Práctica**: Implementar endpoints para crear y obtener proyectos.
+- **Tarea**: Crear un endpoint para eliminar un proyecto.
 
-#### **Clase 3: Lenguaje SQL - Fundamentos**
-- **Objetivo**: Aprender los comandos básicos de SQL.
+### Clase 3: Modelos con Pydantic
+- **Objetivo**: Usar Pydantic para validar datos.
 - **Contenido**:
-  - Estructura de SQL: DDL, DML, DCL, TCL.
-  - Comandos básicos: CREATE, INSERT, SELECT, UPDATE, DELETE.
-  - Tipos de datos en SQL (INT, VARCHAR, DATE, etc.).
-- **Práctica**:
-  - Crear tablas con restricciones (NOT NULL, UNIQUE).
-  - Insertar y consultar datos en una base de datos predefinida.
-- **Evaluación**: Resolver ejercicios de consultas básicas.
-- **Duración**: Teoría (2h), Práctica (3h), Evaluación (1h).
+  - Definición de modelos Pydantic.
+  - Validación de entradas y salidas.
+  - Uso de `response_model`.
+- **Práctica**: Crear un modelo para validar datos de proyectos (nombre, descripción, fecha).
+- **Tarea**: Implementar un endpoint que valide la creación de un proyecto.
 
-#### **Clase 4: Consultas Avanzadas en SQL**
-- **Objetivo**: Dominar consultas más complejas.
+### Clase 4: Documentación y Estructura del Proyecto
+- **Objetivo**: Documentar la API y organizar el proyecto.
 - **Contenido**:
-  - Operadores: WHERE, AND, OR, LIKE, BETWEEN.
-  - Funciones de agregación: COUNT, SUM, AVG, MAX, MIN.
-  - Ordenación (ORDER BY) y agrupación (GROUP BY, HAVING).
-- **Práctica**:
-  - Escribir consultas con filtros y agregaciones (ejemplo: ventas por región).
-  - Resolver problemas prácticos con datos reales.
-- **Evaluación**: Mini-proyecto de consultas sobre un dataset.
-- **Duración**: Teoría (2h), Práctica (3h), Evaluación (1h).
+  - Swagger UI y ReDoc para documentación automática.
+  - Estructura de carpetas y buenas prácticas.
+  - Introducción al proyecto: API de gestión de proyectos.
+- **Práctica**: Documentar endpoints con tags y descripciones.
+- **Tarea**: Diseñar una estructura de carpetas para el proyecto.
 
-#### **Clase 5: Relaciones y Joins**
-- **Objetivo**: Comprender y aplicar relaciones entre tablas.
+---
+
+## Módulo 2: Funcionalidades Intermedias y Bases de Datos
+
+### Clase 5: Bases de Datos con SQLAlchemy
+- **Objetivo**: Conectar la API a una base de datos.
 - **Contenido**:
-  - Tipos de relaciones: 1:1, 1:N, N:N.
-  - Tipos de JOIN: INNER, LEFT, RIGHT, FULL.
-  - Uso de claves foráneas en consultas.
-- **Práctica**:
-  - Crear una base de datos con múltiples tablas relacionadas.
-  - Escribir consultas con JOINs para combinar datos.
-- **Evaluación**: Ejercicios de JOINs y discusión de resultados.
-- **Duración**: Teoría (2.5h), Práctica (2.5h), Evaluación (1h).
+  - Configuración de SQLAlchemy (SQLite/PostgreSQL).
+  - Modelos de base de datos para proyectos.
+  - Operaciones CRUD básicas.
+- **Práctica**: Almacenar y recuperar proyectos en una base de datos.
+- **Tarea**: Crear un endpoint para actualizar proyectos.
 
-#### **Clase 6: Normalización y Diseño de Bases de Datos**
-- **Objetivo**: Diseñar bases de datos eficientes.
+### Clase 6: Relaciones en Bases de Datos
+- **Objetivo**: Manejar relaciones en la base de datos.
 - **Contenido**:
-  - Proceso de normalización en detalle (hasta 3NF).
-  - Diagramas ER (Entidad-Relación) y su traducción a tablas.
-  - Buenas prácticas en diseño de bases de datos.
-- **Práctica**:
-  - Diseñar un diagrama ER para un caso práctico (ejemplo: tienda online).
-  - Normalizar un conjunto de datos no estructurado.
-- **Evaluación**: Presentación de diagramas ER y retroalimentación.
-- **Duración**: Teoría (2.5h), Práctica (2.5h), Evaluación (1h).
+  - Relaciones uno-a-muchos (proyectos y tareas).
+  - Configuración en SQLAlchemy.
+  - Consultas para datos relacionados.
+- **Práctica**: Asociar tareas a un proyecto.
+- **Tarea**: Listar tareas de un proyecto.
 
-#### **Clase 7: Índices y Optimización**
-- **Objetivo**: Mejorar el rendimiento de las bases de datos.
+### Clase 7: Autenticación con OAuth2
+- **Objetivo**: Implementar autenticación con JWT.
 - **Contenido**:
-  - Qué son los índices y cómo funcionan.
-  - Creación y gestión de índices (CREATE INDEX).
-  - Introducción al análisis de rendimiento (EXPLAIN PLAN).
-- **Práctica**:
-  - Crear índices en una base de datos existente.
-  - Comparar tiempos de consulta con y sin índices.
-- **Evaluación**: Análisis de consultas optimizadas.
-- **Duración**: Teoría (2h), Práctica (3h), Evaluación (1h).
+  - Autenticación con OAuth2 y JWT.
+  - Endpoints protegidos con `OAuth2PasswordBearer`.
+  - Generación y verificación de tokens.
+- **Práctica**: Proteger endpoints de proyectos.
+- **Tarea**: Crear un endpoint de login.
 
-#### **Clase 8: Transacciones y Seguridad**
-- **Objetivo**: Gestionar transacciones y proteger datos.
+### Clase 8: Manejo de Errores
+- **Objetivo**: Gestionar errores de forma robusta.
 - **Contenido**:
-  - Concepto de transacciones: ACID.
-  - Comandos: COMMIT, ROLLBACK, SAVEPOINT.
-  - Gestión de usuarios y permisos (GRANT, REVOKE).
-- **Práctica**:
-  - Simular transacciones en un escenario real (ejemplo: transferencias bancarias).
-  - Configurar roles y permisos en una base de datos.
-- **Evaluación**: Ejercicio de transacciones y revisión de seguridad.
-- **Duración**: Teoría (2.5h), Práctica (2.5h), Evaluación (1h).
+  - Uso de `HTTPException`.
+  - Respuestas de error estructuradas.
+  - Middleware para errores globales.
+- **Práctica**: Agregar manejo de errores a endpoints.
+- **Tarea**: Crear un middleware para registrar errores.
 
-#### **Clase 9: Introducción a Procedimientos y Triggers**
-- **Objetivo**: Automatizar tareas en bases de datos.
+---
+
+## Módulo 3: Optimización y Funcionalidades Avanzadas
+
+### Clase 9: Paginación y Filtrado
+- **Objetivo**: Optimizar listas de datos.
 - **Contenido**:
-  - Procedimientos almacenados: creación y uso.
-  - Triggers: definición y casos de uso.
-  - Introducción a vistas (CREATE VIEW).
-- **Práctica**:
-  - Crear un procedimiento almacenado para un caso práctico.
-  - Implementar un trigger para auditoría.
-- **Evaluación**: Desarrollo de un trigger funcional.
-- **Duración**: Teoría (2h), Práctica (3h), Evaluación (1h).
+  - Paginación para proyectos o tareas.
+  - Filtrado y ordenamiento con query parameters.
+  - Optimización de consultas.
+- **Práctica**: Crear un endpoint paginado para proyectos.
+- **Tarea**: Implementar filtros por estado o fecha.
 
-#### **Clase 10: Proyecto Final y Cierre**
-- **Objetivo**: Aplicar todo lo aprendido en un proyecto integral.
+### Clase 10: Programación Asíncrona
+- **Objetivo**: Usar asincronía para mejorar el rendimiento.
 - **Contenido**:
-  - Revisión de conceptos clave.
-  - Buenas prácticas en desarrollo y mantenimiento de bases de datos.
-  - Introducción a temas avanzados (NoSQL, replicación, escalabilidad).
-- **Práctica**:
-  - Proyecto final: diseñar y desarrollar una base de datos completa (ejemplo: sistema de gestión escolar o tienda online).
-  - Presentación de resultados.
-- **Evaluación**: Evaluación del proyecto (funcionalidad, diseño, consultas) y retroalimentación grupal.
-- **Duración**: Teoría (1.5h), Práctica (3.5h), Evaluación (1h).
+  - `def` vs. `async def`.
+  - Bases de datos asíncronas (`asyncpg`).
+  - Beneficios de la asincronía.
+- **Práctica**: Convertir un endpoint a asíncrono.
+- **Tarea**: Comparar rendimiento síncrono vs. asíncrono.
 
-### **Notas Adicionales**
+### Clase 11: Dependencias Avanzadas
+- **Objetivo**: Crear dependencias reutilizables.
+- **Contenido**:
+  - Uso de `Depends` para autenticación y validaciones.
+  - Dependencias anidadas.
+  - Ejemplos de dependencias complejas.
+- **Práctica**: Verificar roles de usuario con una dependencia.
+- **Tarea**: Limitar acceso por rol.
+
+### Clase 12: Testing Automatizado
+- **Objetivo**: Escribir pruebas para la API.
+- **Contenido**:
+  - `pytest` y `TestClient`.
+  - Pruebas unitarias e integración.
+  - Pruebas con base de datos.
+- **Práctica**: Escribir pruebas para endpoints.
+- **Tarea**: Validar errores de autenticación.
+
+---
+
+## Módulo 4: Producción y Características Avanzadas
+
+### Clase 13: WebSockets
+- **Objetivo**: Implementar comunicación en tiempo real.
+- **Contenido**:
+  - WebSockets en FastAPI.
+  - Notificaciones para proyectos (ej. tarea asignada).
+  - Manejo de conexiones.
+- **Práctica**: Crear un WebSocket para notificaciones.
+- **Tarea**: Notificar nuevos proyectos.
+
+### Clase 14: Integración con Servicios Externos
+- **Objetivo**: Conectar con APIs externas.
+- **Contenido**:
+  - Uso de `httpx` para consumir APIs.
+  - Respuestas asíncronas.
+  - Ejemplo: notificaciones por correo.
+- **Práctica**: Integrar un servicio externo.
+- **Tarea**: Probar una API externa relevante.
+
+### Clase 15: Despliegue en Producción
+- **Objetivo**: Llevar la API a producción.
+- **Contenido**:
+  - Uvicorn y Gunicorn.
+  - Despliegue en Heroku, AWS o DigitalOcean.
+  - Variables de entorno y seguridad.
+- **Práctica**: Desplegar la API.
+- **Tarea**: Configurar HTTPS.
+
+### Clase 16: Proyecto Final y Cierre
+- **Objetivo**: Completar y presentar el proyecto.
+- **Contenido**:
+  - Finalización de la API de gestión de proyectos.
+  - Revisión de código y documentación.
+  - Presentación de proyectos.
+- **Práctica**: Desplegar y probar el proyecto final.
+- **Tarea**: Compartir repositorio y un informe.
+
+---
+
+## Notas Adicionales
+- **Proyecto**: Los estudiantes desarrollan una API de gestión de proyectos (proyectos, tareas, usuarios) a lo largo del curso.
+- **Metodología**: 30% teoría, 50% práctica, 20% resolución de problemas.
+- **Requisitos previos**: Python básico y conceptos de web.
 - **Recursos**:
-  - Software: MySQL Workbench, pgAdmin, DBeaver.
-  - Datasets de práctica: datos abiertos (Kaggle, bases de datos de ejemplo como Sakila o Northwind).
-  - Material teórico: presentaciones, guías de SQL, diagramas ER.
-- **Metodología**:
-  - Clases interactivas con ejemplos reales.
-  - Ejercicios progresivos para reforzar conceptos.
-  - Proyecto final para integrar conocimientos.
-- **Evaluación**:
-  - Participación en clase (20%).
-  - Ejercicios prácticos (30%).
-  - Proyecto final (50%).
-- **Adaptaciones**:
-  - Si el grupo tiene experiencia previa, acelerar los temas iniciales y profundizar en optimización o temas avanzados.
-  - Incluir descansos cada 1.5-2 horas para mantener la atención.
-
+  - [Documentación de FastAPI](https://fastapi.tiangolo.com/)
+  - Tutoriales de SQLAlchemy, Pydantic, JWT.
+  - Repositorio de GitHub con ejemplos.
+- **Evaluación**: Proyecto (50%), tareas (30%), participación (20%).
